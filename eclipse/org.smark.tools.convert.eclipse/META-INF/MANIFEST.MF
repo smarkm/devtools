@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse
+Bundle-SymbolicName: org.smark.tools.convert.eclipse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Import-Package: org.eclipse.jface.dialogs
+Require-Bundle: org.eclipse.ui;bundle-version="3.108.1"

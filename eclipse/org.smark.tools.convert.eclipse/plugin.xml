@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.smark.tools.convert.eclipse.actionSet"
+            label="Smark Eclipse Tools"
+            visible="true">
+         <menu
+               id="org.smark.tools.menu.Tool"
+               label="&amp;Tools">
+            <separator
+                  name="convert">
+            </separator>
+         </menu>
+         <action
+               class="org.smark.tools.convert.eclipse.actions.OpenDateConverDialogAction"
+               icon="icons/sample.gif"
+               id="org.smark.tools.convert.eclipse.actions.OpenDateConverDialogAction"
+               label="&amp;Date Convert"
+               menubarPath="org.smark.tools.menu.Tool/convert"
+               toolbarPath="convert"
+               tooltip="Date Convert">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>
