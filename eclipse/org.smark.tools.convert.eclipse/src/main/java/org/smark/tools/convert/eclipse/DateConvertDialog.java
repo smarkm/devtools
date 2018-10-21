@@ -21,9 +21,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class DateConvertDialog extends TitleAreaDialog {
-	static String[] pattents = {"yyyy-MM-dd hh:mm:ss","yyyyMMddhhmmss","yyyy/MM/dd hh:mm:ss"};  
+	static String[] pattents = {"yyyy-MM-dd HH:mm:ss","yyyyMMddHHmmss","yyyy/MM/dd HH:mm:ss"};  
 	private Text txtDate;
 	private Text txtMills;
+	private Text txtD2M;
+	private Text txtM2D;
 
 	/**
 	 * Create the dialog.
@@ -40,10 +42,10 @@ public class DateConvertDialog extends TitleAreaDialog {
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		setMessage("date convert");
+		setMessage("Date convert");
 		Composite area = (Composite) super.createDialogArea(parent);
 		Composite container = new Composite(area, SWT.NONE);
-		container.setLayout(new GridLayout(2, false));
+		container.setLayout(new GridLayout(4, false));
 		container.setLayoutData(new GridData(GridData.FILL_BOTH));
 		
 		Label lblDate = new Label(container, SWT.NONE);
@@ -54,6 +56,14 @@ public class DateConvertDialog extends TitleAreaDialog {
 		txtDate = new Text(container, SWT.BORDER);
 		txtDate.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		
+		Label label = new Label(container, SWT.NONE);
+		label.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		label.setText("->");
+		
+		txtD2M = new Text(container, SWT.BORDER);
+		txtD2M.setEditable(false);
+		txtD2M.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1));
+		
 		Label lblMills = new Label(container, SWT.NONE);
 		lblMills.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblMills.setText("Mills: ");
@@ -61,13 +71,24 @@ public class DateConvertDialog extends TitleAreaDialog {
 		txtMills = new Text(container, SWT.BORDER);
 		txtMills.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		
+		Label label_1 = new Label(container, SWT.NONE);
+		label_1.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		label_1.setText("->");
+		
+		txtM2D = new Text(container, SWT.BORDER);
+		txtM2D.setEditable(false);
+		txtM2D.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
 		txtDate.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent event) {
 				String dateStr = txtDate.getText();
+				if (dateStr.length()==0) {
+					txtD2M.setText("");
+				}
 				Date date = convertDate(dateStr);
 				if (date!=null) {
-					txtMills.setText(date.getTime()+"");
+					txtD2M.setText(date.getTime()+"");
 				}
 			}
 		});
@@ -76,10 +97,16 @@ public class DateConvertDialog extends TitleAreaDialog {
 			@Override
 			public void modifyText(ModifyEvent event) {
 				String dateStr = txtMills.getText();
+				if (dateStr.length()==0) {
+					txtM2D.setText("");
+				}
 				try {
-					SimpleDateFormat format  =  new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss.sss");
-					String rs = format.format(mills2Date(dateStr));
-					txtDate.setText(rs);
+					if (dateStr.length()>0) {
+						SimpleDateFormat format  =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.sss");
+						String rs = format.format(mills2Date(dateStr));
+						txtM2D.setText(rs);
+					}
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
