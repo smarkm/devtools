@@ -42,11 +42,13 @@ public class DateConvertDialog extends TitleAreaDialog {
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		setMessage("Date convert");
+		setMessage("Date convert(yyyy-MM-dd HH:mm:ss | yyyyMMddHHmmss | yyyy/MM/dd HH:mm:ss  )\r\n\r\n\t\r\n\t\r\n\t");
 		Composite area = (Composite) super.createDialogArea(parent);
 		Composite container = new Composite(area, SWT.NONE);
 		container.setLayout(new GridLayout(4, false));
-		container.setLayoutData(new GridData(GridData.FILL_BOTH));
+		GridData gd_container = new GridData(GridData.FILL_BOTH);
+		gd_container.verticalAlignment = SWT.TOP;
+		container.setLayoutData(gd_container);
 		
 		Label lblDate = new Label(container, SWT.NONE);
 		lblDate.setAlignment(SWT.RIGHT);
@@ -102,7 +104,7 @@ public class DateConvertDialog extends TitleAreaDialog {
 				}
 				try {
 					if (dateStr.length()>0) {
-						SimpleDateFormat format  =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.sss");
+						SimpleDateFormat format  =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 						String rs = format.format(mills2Date(dateStr));
 						txtM2D.setText(rs);
 					}
@@ -145,11 +147,4 @@ public class DateConvertDialog extends TitleAreaDialog {
 		createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
 	}
 
-	/**
-	 * Return the initial size of the dialog.
-	 */
-	@Override
-	protected Point getInitialSize() {
-		return new Point(450, 300);
-	}
 }
