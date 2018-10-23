@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.smark.tools.devtools_1.0.0.jar" id="org.smark.tools.devtools" version="1.0.0">
+      <category name="SmarkTools"/>
+   </feature>
+   <category-def name="SmarkTools" label="Smark Tools"/>
+</site>
