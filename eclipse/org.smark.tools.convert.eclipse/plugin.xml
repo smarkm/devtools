@@ -8,7 +8,7 @@
             label="Smark Eclipse Tools"
             visible="true">
          <menu
-               id="org.smark.tools.menu.Tool"
+               id="org.smark.tools.menu.Tools"
                label="&amp;Tools">
             <separator
                   name="convert">
