@@ -19,7 +19,7 @@
                icon="icons/sample.gif"
                id="org.smark.tools.convert.eclipse.actions.OpenDateConverDialogAction"
                label="&amp;Date Convert"
-               menubarPath="org.smark.tools.menu.Tool/convert"
+               menubarPath="org.smark.tools.menu.Tools/convert"
                toolbarPath="convert"
                tooltip="Date Convert">
          </action>
