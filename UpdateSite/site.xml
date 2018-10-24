@@ -3,7 +3,7 @@
    <description name="Smark Tools" url="https://github.com/smarkm/devtools/tree/master/UpdateSite">
       Smark Tools
    </description>
-   <feature url="features/org.smark.tools.devtools_1.0.0.jar" id="org.smark.tools.devtools" version="1.0.0">
+   <feature url="features/org.smark.tools.devtools_0.0.2.jar" id="org.smark.tools.devtools" version="0.0.2">
       <category name="SmarkTools"/>
    </feature>
    <category-def name="SmarkTools" label="Smark Tools"/>

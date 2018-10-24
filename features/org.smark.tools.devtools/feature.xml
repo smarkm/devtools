@@ -2,7 +2,7 @@
 <feature
       id="org.smark.tools.devtools"
       label="Smark Devtools"
-      version="1.0.0"
+      version="0.0.2"
       provider-name="https://github.com/smarkm">
 
    <description url="http://www.example.com/description">
@@ -218,17 +218,17 @@
    </license>
 
    <plugin
-         id="org.smark.tools.convert.eclipse"
-         download-size="0"
-         install-size="0"
-         version="1.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.smark.soox.eclipse"
          download-size="0"
          install-size="0"
          version="0.0.5"
+         unpack="false"/>
+
+   <plugin
+         id="org.smark.tools.convert.eclipse"
+         download-size="0"
+         install-size="0"
+         version="0.0.2"
          unpack="false"/>
 
 </feature>

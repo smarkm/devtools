@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Convert
 Bundle-SymbolicName: org.smark.tools.convert.eclipse;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 0.0.2
 Import-Package: org.eclipse.jface.dialogs
 Require-Bundle: org.eclipse.ui;bundle-version="3.108.1"
+Bundle-Vendor: https://github.com/smarkm
