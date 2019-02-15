@@ -7,19 +7,13 @@
             id="org.smark.tools.convert.eclipse.actionSet"
             label="Smark Eclipse Tools"
             visible="true">
-         <menu
-               id="org.smark.tools.menu.Tools"
-               label="&amp;Tools">
-            <separator
-                  name="convert">
-            </separator>
-         </menu>
          <action
                class="org.smark.tools.convert.eclipse.actions.OpenDateConverDialogAction"
                icon="icons/sample.gif"
                id="org.smark.tools.convert.eclipse.actions.OpenDateConverDialogAction"
                label="&amp;Date Convert"
                menubarPath="org.smark.tools.menu.Tools/convert"
+               style="push"
                toolbarPath="convert"
                tooltip="Date Convert">
          </action>
