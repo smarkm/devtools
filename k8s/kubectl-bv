@@ -3,14 +3,17 @@
 # usage: kubectl bv
 
 echo "Kuber cluster bird view"
-echo "====Node===="
+echo "======Node======"
 kubectl get node -o wide
 echo
-echo "====Service===="
+echo "======Service======"
 kubectl get service -o wide  --all-namespaces
 echo
-echo "====Pod===="
+echo "======Deployment======"
+kubectl get deployment -o wide --all-namespaces
+echo
+echo "======Pod======"
 kubectl get po -o wide --all-namespaces 
 echo
-echo "====plugin===="
+echo "======Plugin======"
 kubectl plugin list
