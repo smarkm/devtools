@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.smark.soox.eclipse.handlers.SooxSearchHandler"
+            id="org.smark.soox.eclipse.commands.sooxSearchCommand"
+            name="Soox Search">
+      </command>
+      <command
+            defaultHandler="org.smark.soox.translator.TranslatorHandler"
+            id="org.smark.soox.translator.TranslatorHandler"
+            name="Translator">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.smark.soox.eclipse.commands.sooxSearchCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="Ctrl+Shift+S">
+      </key>
+      <key
+            commandId="org.smark.soox.translator.TranslatorHandler"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="Ctrl+Shift+Space">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="org.smark.tools.menu.Tools"
+               label="&amp;Tools">
+            <command
+                  commandId="org.smark.soox.eclipse.commands.sooxSearchCommand"
+                  icon="icons/soox.gif"
+                  id="org.smark.soox.eclipse.menu.sooxSearchCommand"
+                  mnemonic="S">
+            </command>
+            <command
+                  commandId="org.smark.soox.translator.TranslatorHandler"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="org.smark.soox.eclipse.toolbars.sampleToolbar">
+            <command
+                  commandId="org.smark.soox.eclipse.commands.sooxSearchCommand"
+                  icon="icons/soox.gif"
+                  tooltip="soox"
+                  id="org.smark.soox.eclipse.toolbars.sooxSearchCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.smark.soox.eclipse.SooxPreferencePage"
+            id="org.smark.soox.eclipse.preferPage"
+            name="Soox">
+      </page>
+   </extension>
+
+</plugin>
