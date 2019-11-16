@@ -1,0 +1,16 @@
+#!/bin/bash
+# k8s cluster bird view plugins
+# usage: kubectl bv
+
+echo "Kuber cluster bird view"
+echo "====Node===="
+kubectl get node -o wide
+echo
+echo "====Service===="
+kubectl get service -o wide  --all-namespaces
+echo
+echo "====Pod===="
+kubectl get po -o wide --all-namespaces 
+echo
+echo "====plugin===="
+kubectl plugin list
