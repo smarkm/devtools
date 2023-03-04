@@ -21,7 +21,7 @@
             commandId="org.smark.soox.eclipse.commands.sooxSearchCommand"
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="Ctrl+Shift+S">
+            sequence="Ctrl+Shift+Z">
       </key>
       <key
             commandId="org.smark.soox.translator.TranslatorHandler"
@@ -35,7 +35,7 @@
       <menuContribution
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
-               id="org.smark.tools.menu.Tools"
+               id="org.smark.tools.menu"
                label="&amp;Tools">
             <command
                   commandId="org.smark.soox.eclipse.commands.sooxSearchCommand"

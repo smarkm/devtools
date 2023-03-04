@@ -12,10 +12,14 @@ The content like this:
 	d=https://www.baidu.com/s?wd=
 	3=https://www.so.com/s?q=
 	b=http://www.bing.com/search?q=
-	g=https://www.google.com/#q=
+	g=https://www.google.com/search?q=
 	s=http://stackoverflow.com/search?q=
-	y=https://www.baidu.com/s?wd=
+	y=https://search.yahoo.com/search?p=
 	m=http://mvnrepository.com/search?q=
 	w=http://www.wolframalpha.com/input/?i=
 
 
+## Changes
+### 0.0.5
+* Binding default hotkey `CTRL+SHIFT+Z`
+* Fix `google` search url

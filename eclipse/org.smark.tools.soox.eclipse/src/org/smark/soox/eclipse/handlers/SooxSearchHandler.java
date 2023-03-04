@@ -26,7 +26,15 @@ public class SooxSearchHandler extends AbstractHandler {
 		if (searchHistory.size()>0) {
 			tipText = (String)searchHistory.toArray()[0];
 		}
-		SooxInpurtDialog dialog = new SooxInpurtDialog(window.getShell(), "Soox", "Seach easy use soox", tipText, null);
+		SooxInpurtDialog dialog = new SooxInpurtDialog(window.getShell(), "Soox", "Seach easy use soox\n"
+				+ "g: Google\n"
+				+ "s: Stackoverflow\n"
+				+ "b: Bing\n"
+				+ "m: Maven repo\n"
+				+ "w: Wolframalpha\n"
+				+ "y: Yahoo\n"
+				+ "3: 360 Search\n"
+				+ "d: baidu\n", tipText, null);
 		int rs = dialog.open();
 		if (rs==InputDialog.OK) {
 			String value = dialog.getValue();
