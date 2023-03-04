@@ -1,7 +1,7 @@
 # Soox eclipse plugin
 
 ## Install
-* [Download](https://github.com/smarkm/soox/releases) soox jar file
+* [Download](https://github.com/smarkm/devtools/releases) soox jar file
 * Put the soox jar to `eclipse/dropins`
 * Restart eclipse
 
